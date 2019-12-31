@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-12 d-flex">
+      <h1>Process {{id}}</h1>
+      <div class="ml-auto">
+        <button class="btn btn-primary" (click)="refresh()"><i class="fa fa-refresh mr-2"></i>Refresh</button>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <app-process-detail [process]="process$|async" (selectFailedMessage)="goToFailedMessagePage($event)"
+                          (selectPendingMessage)="goToPendingMessagePage($event)"></app-process-detail>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<ngb-tabset>
+  <ngb-tab title="Failed messages ({{process.failedMessages.length}})">
+    <ng-template ngbTabContent>
+      <div class="mt-3">
+        <h4>Failed <span class="badge badge-danger">{{process.failedMessages.length}}</span></h4>
+        <app-message-table [messages]="process.failedMessages"
+                           (select)="selectFailedMessage.emit($event)"></app-message-table>
+      </div>
+    </ng-template>
+  </ngb-tab>
+
+  <ngb-tab title="Pending messages ({{process.pendingMessages.length}})">
+    <ng-template ngbTabContent>
+      <div class="mt-3">
+        <h4>Pending <span class="badge badge-info">{{process.pendingMessages.length}}</span></h4>
+        <app-message-table [messages]="process.pendingMessages"
+                           (select)="selectPendingMessage.emit($event)"></app-message-table>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>
